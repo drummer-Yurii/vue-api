@@ -19,6 +19,12 @@ const form = ref({
         @submit.prevent="authStore.handleResetPassword(form)"
         class="max-w-md mx-auto bg-slate-100 p-4 rounded-lg mt-12"
     >
+    <div
+      v-if="authStore.status" 
+      class="m-2 p-2 text-green-900 font-semibold bg-green-300 rounded-md"
+    >
+      {{ authStore.status }}
+    </div>
       <div class="mb-6">
         <label 
           for="password"
@@ -52,6 +58,11 @@ const form = ref({
             dark:shadow-sm-light
         " 
         />
+        <div v-if="authStore.errors.password" class="flex">
+          <span class="text-red-400 text-sm m-2 p-2">
+            {{ authStore.errors.password[0] }}
+          </span>
+        </div>
       </div>
       <div class="mb-6">
         <label 

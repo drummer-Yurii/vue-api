@@ -8,9 +8,16 @@ const email = ref('');
 </script>
 
 <template>
-    <form class="mx-auto max-w-md" @submit.prevent="authStore.handleForgotPassword(email)">
+    <form class="mx-auto max-w-md bg-slate-100 p-4 mt-12 rounded-lg" 
+      @submit.prevent="authStore.handleForgotPassword(email)"
+    >
       <h3 class="font-bold">Forgot password</h3>
-
+      <div
+        v-if="authStore.status" 
+        class="m-2 p-2 text-green-900 font-semibold bg-green-300 rounded-md"
+      >
+        {{ authStore.status }}
+      </div>
       <div class="my-6">
         <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
         <input 
