@@ -53,6 +53,11 @@ const form = ref({
                                         focus-visible:shadow-none
                                     " 
                                     />
+                                    <div v-if="authStore.errors.email" class="flex">
+                                        <span class="text-red-400 text-sm m-2 p-2">
+                                            {{ authStore.errors.email[0] }}
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="mb-6">
                                     <input 
@@ -75,6 +80,11 @@ const form = ref({
                                         focus-visible:shadow-none
                                     " 
                                     />
+                                    <div v-if="authStore.errors.password" class="flex">
+                                        <span class="text-red-400 text-sm m-2 p-2">
+                                            {{ authStore.errors.password[0] }}
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="mb-10">
                                     <button

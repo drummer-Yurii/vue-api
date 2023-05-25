@@ -14,11 +14,17 @@ const email = ref('');
       <div class="my-6">
         <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
         <input 
-            type="email" 
-            id="email" 
-            v-model="email" 
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700" 
-            placeholder="email@laraveller.com">
+          type="email" 
+          id="email" 
+          v-model="email" 
+          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700" 
+          placeholder="email@laraveller.com" 
+        />
+        <div v-if="authStore.errors.email" class="flex">
+          <span class="text-red-400 text-sm m-2 p-2">
+            {{ authStore.errors.email[0] }}
+          </span>
+        </div>
       </div>
       <button class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white max-w-[100px]">Submit</button>
     </form>
