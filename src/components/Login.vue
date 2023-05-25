@@ -93,7 +93,14 @@ const form = ref({
                                     </button>
                                 </div>
                             </form>
+                            <router-link 
+                                to="/forgot-password"
+                                class="mb-2 inline-block text-base text-[#adadad] hover:text-primary hover:underline"
+                            >
+                                Forgot Password?
+                            </router-link>
                             <p class="text-base text-[#adadad]">
+                                Not a member yet?
                                 <a href="javascript:void(0)" class="text-primary hover:underline">
                                     Sign up
                                 </a>
